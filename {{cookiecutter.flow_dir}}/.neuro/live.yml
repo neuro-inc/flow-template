@@ -1,3 +1,5 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/neuro-inc/neuro-flow/refs/heads/master/src/apolo_flow/flow-schema.json
+## Keep the preceding line to enable IntelliSense for the workflow configuration file.
 kind: live
 ## Required. Type of workflow, might be one of the following:
 ## - 'live' -- full reference at https://docs.apolo.us/apolo-flow-reference/workflow-syntax/live-workflow-syntax
