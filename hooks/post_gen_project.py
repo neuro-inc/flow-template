@@ -31,14 +31,14 @@ except Exception:
                     PROJECT_NAME = line.split()[2]
                     break
 if PROJECT_NAME:
-    proj_file = Path("./.neuro/project.yml")
+    proj_file = Path("./.apolo/project.yml")
     content = proj_file.read_text()
     content = content.replace(
         "# project_name: {project_name}", f"project_name: {PROJECT_NAME}"
     )
     proj_file.write_text("".join(content))
 else:
-    live_file = Path("./.neuro/live.yml")
+    live_file = Path("./.apolo/live.yml")
     content = live_file.read_text()
     content = content.replace("/$[[ project.project_name ]]/", "")
     live_file.write_text("".join(content))
@@ -47,8 +47,8 @@ else:
 
 # >>> Optionally clearing comments
 COMMENTS_STRUCTURE = {
-    "./.neuro/live.yml": r"(\s*#(?! yaml-language-server).*)",
-    "./.neuro/project.yml": r"(\s*#(?! yaml-language-server).*)",
+    "./.apolo/live.yml": r"(\s*#(?! yaml-language-server).*)",
+    "./.apolo/project.yml": r"(\s*#(?! yaml-language-server).*)",
 }
 PRESERVE_HINTS_VARIANS = {
     "yes": True,

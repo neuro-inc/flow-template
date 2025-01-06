@@ -15,7 +15,7 @@ jobs:
       run: make setup
     - id: run_updater
       name: Run update actions script
-      run: python \{\{cookiecutter.flow_dir\}\}/update_actions.py ".neuro/*.y*ml"
+      run: python \{\{cookiecutter.flow_dir\}\}/update_actions.py ".apolo/*.y*ml"
     - id: generate_token
       uses: tibdex/github-app-token@v1
       with:
@@ -27,7 +27,7 @@ jobs:
         token: ${{ steps.generate_token.outputs.token }}
         branch: update/actions-tags
         title: Auto-update actions tags
-        commit-message: Auto-update neuro-flow actions tags
+        commit-message: Auto-update apolo-flow actions tags
         body: |
           Updated apolo-flow action version tags in the following
           files: ${{ steps.run_updater.outputs.updated_files }}

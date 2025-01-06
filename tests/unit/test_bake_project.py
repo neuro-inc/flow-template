@@ -85,8 +85,8 @@ def test_flow_config_with_comments(cookies: Cookies, preserve_comments: str) -> 
     assert result.exit_code == 0
     comment_regex = re.compile(r"(\s*#(?! yaml-language-server).*)")
     with inside_dir(str(result.project_path)):
-        live_file_content = Path(".neuro/live.yml").read_text()
-        project_file_content = Path(".neuro/project.yml").read_text()
+        live_file_content = Path(".apolo/live.yml").read_text()
+        project_file_content = Path(".apolo/project.yml").read_text()
 
         l_com_exists = any(
             [
@@ -101,11 +101,11 @@ def test_flow_config_with_comments(cookies: Cookies, preserve_comments: str) -> 
             ]
         )
         if preserve_comments == "yes":
-            assert l_com_exists, ".neuro/live.yml file does not contain comments"
-            assert p_com_exists, ".neuro/project.yml file does not contain comments"
+            assert l_com_exists, ".apolo/live.yml file does not contain comments"
+            assert p_com_exists, ".apolo/project.yml file does not contain comments"
         elif preserve_comments == "no":
-            assert not l_com_exists, ".neuro/live.yml file contains comments"
-            assert not p_com_exists, ".neuro/project.yml file contains comments"
+            assert not l_com_exists, ".apolo/live.yml file contains comments"
+            assert not p_com_exists, ".apolo/project.yml file contains comments"
         else:
             raise RuntimeError(
                 f"invalid value '{preserve_comments}' for 'preserve_comments' arg. "
@@ -134,7 +134,7 @@ def test_flow_name(cookies: Cookies) -> None:
     result = cookies.bake()
 
     assert result.exit_code == 0
-    project_yml = result.project_path / ".neuro" / "project.yml"
+    project_yml = result.project_path / ".apolo" / "project.yml"
     project_yml_content = yaml.safe_load(project_yml.read_text())
 
     assert "id" in project_yml_content

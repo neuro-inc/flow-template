@@ -3,6 +3,6 @@
 ## Check our full reference documentation at https://docs.apolo.us/apolo-flow-reference/workflow-syntax/project-configuration-syntax
 id: {{ cookiecutter.flow_id }}
 ## Could be referenced as $[[ project.id ]] or $[[ flow.project_id ]] contexts.
-## Default value: name of the folder containing `.neuro`
+## Default value: name of the folder containing `.apolo`
 # project_name: {project_name}
 ## Optional platform project name that owns the flow, referenced via $[[ project.project_name ]]

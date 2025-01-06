@@ -113,7 +113,7 @@ On a local machine, run `apolo-flow mkvolumes`. This command creates storage fol
 
 After the storage folders have been created, run `apolo-flow upload data` from the local machine as well. This command pushes local files stored in `./data` into the `storage:{{ cookiecutter.flow_id }}/data` volume mounted to your development environment's `/project/data`.
 
-You can upload (or download) every folder for which the `local` parameter is specified in the [live.yml file](./.neuro/live.yml).
+You can upload (or download) every folder for which the `local` parameter is specified in the [live.yml file](./.apolo/live.yml).
 
 ### Uploading data from Google Cloud Storage to a job
 

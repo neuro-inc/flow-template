@@ -29,7 +29,7 @@ format:
 test:
 	 export TMP_DIR=$$(mktemp -d) && \
 	   cookiecutter --no-input --config-file ./tests/cookiecutter.yaml --output-dir $$TMP_DIR . && \
-	   ls -d "$$TMP_DIR/test flow/.neuro/"
+	   ls -d "$$TMP_DIR/test flow/.apolo/"
 	 pytest -v -n auto tests/unit
 	 pytest -v -n auto tests/e2e
 	 @echo -e "OK\n"
