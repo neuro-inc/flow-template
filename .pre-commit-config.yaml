@@ -1,6 +1,6 @@
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: "v4.6.0"
+    rev: "v5.0.0"
     hooks:
       - id: check-merge-conflict
   - repo: https://github.com/asottile/yesqa
@@ -12,13 +12,13 @@ repos:
     hooks:
       - id: isort
   - repo: https://github.com/psf/black
-    rev: "24.8.0"
+    rev: "24.10.0"
     hooks:
       - id: black
         language_version: python3 # Should be a command that runs python3.6+
         args: ["--line-length", "88"]
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: "v4.6.0"
+    rev: "v5.0.0"
     hooks:
       - id: check-case-conflict
       - id: check-yaml
@@ -32,13 +32,13 @@ repos:
       - id: debug-statements
   # Another entry is required to apply file-contents-sorter to another file
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: "v4.6.0"
+    rev: "v5.0.0"
     hooks:
       - id: file-contents-sorter
         files: |
           .gitignore
   - repo: https://github.com/asottile/pyupgrade
-    rev: "v3.16.0"
+    rev: "v3.19.1"
     hooks:
       - id: pyupgrade
         args: ["--py36-plus"]
