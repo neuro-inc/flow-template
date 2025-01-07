@@ -4,6 +4,34 @@
 
 [comment]: # (towncrier release notes start)
 
+Apolo Platform Flow Template v25.01.07 (2025-01-07)
+===================================================
+
+
+Features
+--------
+
+
+- This version includes changes to the workflow and project configuration files to enable code completion and validation by adding schema references to Apolo's config yaml files. These changes will improve the development experience by providing better code completion and validation.
+
+  Changes:
+
+  {{cookiecutter.flow_dir}}/.apolo/live.yml: Added schema reference for code completion support in the live workflow configuration file.
+  {{cookiecutter.flow_dir}}/.apolo/project.yml: Added schema reference for code completion support in the project configuration file. ([#699](https://github.com/neuro-inc/flow-template/issues/699))
+
+- This version includes changes to Dockerfile to the new runtime image
+
+  Changes:
+
+  {{cookiecutter.flow_dir}}/Dockerfile: Upgraded image to v24.12.0 ([#700](https://github.com/neuro-inc/flow-template/issues/700))
+
+
+Misc
+----
+
+- Use ".apolo" directory instead of ".neuro" and apolo* files istead of neuro* to configure apolo-flow. ([#705](https://github.com/neuro-inc/flow-template/issues/705))
+
+
 Apolo Platform Flow Template v24.11.12 (2024-11-26)
 ===================================================
 
