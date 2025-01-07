@@ -12,7 +12,7 @@ jobs:
         with:
           python-version: 3.8
       - name: Install dependencies
-        run: pip install -U "PyGithub==1.55"
+        run: pip install -U "PyGithub==2.5.0"
       - id: run_updater
         name: Run update actions script
         run: python update_actions.py ".apolo/*.y*ml"
