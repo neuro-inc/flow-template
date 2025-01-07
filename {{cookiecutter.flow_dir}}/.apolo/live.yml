@@ -54,7 +54,7 @@ images:
     ## Required. Image reference, can be of two types:
     ##  - Platform-hosted image - its reference should start with the 'image:' prefix. `apolo-flow build <img_id>` will work in this case.
     ##  - Image hosted on DockerHub - without the 'image:' prefix. In this case, `apolo-flow build <img_id>` will not work.
-    ## Check ./neuro/project.yaml to configure the $[[ flow.project_id ]] part.
+    ## Check .apolo/project.yaml to configure the $[[ flow.project_id ]] part.
     ## During job execution, the '$[[ flow.project_id ]]' part will be replaced with its string value by the Apolo-Flow engine.
     ## Hint: You can use the embedded `hash_files()` function to generate a built image's tag based on its content.
     ## Example:
@@ -64,7 +64,7 @@ images:
     ## An optional Docker file path used for building images, `Dockerfile` by default. The path should be relative to the context's root.
     context: $[[ flow.workspace ]]/
     ## Optional. The Docker context used to build an image, specified as a local path relative to the project's root folder.
-    ## The project's root folder is the folder that contains the '.neuro' directory,
+    ## The project's root folder is the folder that contains the '.apolo' directory,
     ##  its path can be referenced via $[[ flow.workspace ]]/.
     # build_preset: cpu-small
     ## Optional. Preset name used to build the Docker image.
