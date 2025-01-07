@@ -1,33 +1,33 @@
 name: Update apolo-flow action tags
 on:
   schedule:
-  - cron: 0 0 * * *
+    - cron: 0 0 * * *
 jobs:
   auto-update:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: 3.11
-    - name: Install dependencies
-      run: make setup
-    - id: run_updater
-      name: Run update actions script
-      run: python \{\{cookiecutter.flow_dir\}\}/update_actions.py ".apolo/*.y*ml"
-    - id: generate_token
-      uses: tibdex/github-app-token@v1
-      with:
-        app_id: ${{ secrets.BOT_APP_ID }}
-        private_key: ${{ secrets.BOT_PRIVATE_KEY }}
-    - name: Create Pull Request
-      uses: peter-evans/create-pull-request@v4
-      with:
-        token: ${{ steps.generate_token.outputs.token }}
-        branch: update/actions-tags
-        title: Auto-update actions tags
-        commit-message: Auto-update apolo-flow actions tags
-        body: |
-          Updated apolo-flow action version tags in the following
-          files: ${{ steps.run_updater.outputs.updated_files }}
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.11
+      - name: Install dependencies
+        run: make setup
+      - id: run_updater
+        name: Run update actions script
+        run: python \{\{cookiecutter.flow_dir\}\}/update_actions.py ".apolo/*.y*ml"
+      - id: generate_token
+        uses: tibdex/github-app-token@v2
+        with:
+          app_id: ${{ secrets.BOT_APP_ID }}
+          private_key: ${{ secrets.BOT_PRIVATE_KEY }}
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v7
+        with:
+          token: ${{ steps.generate_token.outputs.token }}
+          branch: update/actions-tags
+          title: Auto-update actions tags
+          commit-message: Auto-update apolo-flow actions tags
+          body: |
+            Updated apolo-flow action version tags in the following
+            files: ${{ steps.run_updater.outputs.updated_files }}

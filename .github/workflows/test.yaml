@@ -14,12 +14,12 @@ jobs:
       PYTHONIOENCODING: utf-8
     steps:
       - name: Checkout commit
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           ref: ${{ github.event.pull_request.head.sha }}
 
       - name: Install python ${{ matrix.python-version }}
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
 
@@ -45,7 +45,7 @@ jobs:
           apolo config login-with-token ${{ secrets.CLIENT_TEST_E2E_USER_NAME }} https://api.dev.apolo.us/api/v1
           apolo --color=no config show
 
-      - uses: webfactory/ssh-agent@v0.7.0
+      - uses: webfactory/ssh-agent@v0.9.0
         # Authenticates ssh on worker to pull repos under github.com/apolo-actions via ssh
         # Y.S. key is used
         with:
