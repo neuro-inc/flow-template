@@ -24,7 +24,7 @@ jobs:
           python-version: ${{ matrix.python-version }}
 
       - name: Cache Python and its deps
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           key: ${{ runner.os }}-python-${{ matrix.python-version }}-${{ hashFiles('requirements/*.txt') }}
           path: ${{ env.pythonLocation }}
