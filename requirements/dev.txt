@@ -1,6 +1,6 @@
 -r base.txt
 git+https://github.com/andriihomiak/pytest-cookies.git@fix/quotes_in_user_config # pytest-cookies==0.6.1
-mypy==1.14.1
+mypy==1.15.0
 pipx==1.7.1
 pre-commit==4.1.0
 PyGithub==2.5.0  # Bump also {{cookiecutter.flow_dir}}/.github/workflows/update-apolo-flow-actions.yml:15
