@@ -5,7 +5,7 @@ pipx==1.7.1
 pre-commit==4.2.0
 PyGithub==2.6.1  # Bump also {{cookiecutter.flow_dir}}/.github/workflows/update-apolo-flow-actions.yml:15
 pytest==8.3.4
-pytest-asyncio==0.25.3
+pytest-asyncio==0.26.0
 pytest-xdist==3.6.1
 PyYAML==6.0.2
 towncrier==24.8.0
