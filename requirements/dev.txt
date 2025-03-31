@@ -9,4 +9,4 @@ pytest-asyncio==0.25.3
 pytest-xdist==3.6.1
 PyYAML==6.0.2
 towncrier==24.8.0
-types-PyYAML==6.0.12.20241230
+types-PyYAML==6.0.12.20250326
