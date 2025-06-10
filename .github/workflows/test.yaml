@@ -45,7 +45,7 @@ jobs:
           apolo config login-with-token ${{ secrets.CLIENT_TEST_E2E_USER_NAME }} https://api.dev.apolo.us/api/v1
           apolo --color=no config show
 
-      - uses: webfactory/ssh-agent@v0.7.0
+      - uses: webfactory/ssh-agent@v0.9.1
         # Authenticates ssh on worker to pull repos under github.com/apolo-actions via ssh
         # Y.S. key is used
         with:
