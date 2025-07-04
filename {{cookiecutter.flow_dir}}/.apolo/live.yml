@@ -317,3 +317,10 @@ jobs:
     bash: |
         cd $[[ volumes.project.mount ]]
         python $[[ volumes.code.mount ]]/train.py --data $[[ volumes.data.mount ]] $[[ multi.args ]]
+
+  # Uncomment if you want to use Tensorboard with your training job
+  # Note, your trainig script should write Tensorboard logs to the /project/results folder
+  # tensorboard:
+  #   action: gh:apolo-actions/tensorboard@v1.0.0
+  #   args:
+  #     volumes_results_remote: $[[ volumes.results.remote ]]
