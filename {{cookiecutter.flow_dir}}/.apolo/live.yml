@@ -318,23 +318,9 @@ jobs:
         cd $[[ volumes.project.mount ]]
         python $[[ volumes.code.mount ]]/train.py --data $[[ volumes.data.mount ]] $[[ multi.args ]]
 
-  jupyter:
-    action: gh:apolo-actions/jupyter@v1.1.2
-    args:
-      image: $[[ images.train.ref ]]
-      multi_args: $[[ multi.args ]]
-      volumes_data_remote: $[[ volumes.data.remote ]]
-      volumes_code_remote: $[[ volumes.code.remote ]]
-      volumes_config_remote: $[[ volumes.config.remote ]]
-      volumes_notebooks_remote: $[[ volumes.notebooks.remote ]]
-      volumes_results_remote: $[[ volumes.results.remote ]]
-
-  tensorboard:
-    action: gh:apolo-actions/tensorboard@v1.0.0
-    args:
-      volumes_results_remote: $[[ volumes.results.remote ]]
-
-  filebrowser:
-    action: gh:apolo-actions/filebrowser@v22.9.0
-    args:
-      volumes_project_remote: $[[ volumes.project.remote ]]
+  # Uncomment if you want to use Tensorboard with your training job
+  # Note, your trainig script should write Tensorboard logs to the /project/results folder
+  # tensorboard:
+  #   action: gh:apolo-actions/tensorboard@v1.0.0
+  #   args:
+  #     volumes_results_remote: $[[ volumes.results.remote ]]
