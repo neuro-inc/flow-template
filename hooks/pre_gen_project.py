@@ -2,7 +2,6 @@ import re
 import sys
 from pathlib import Path
 
-
 FLOW_DIR = "{{ cookiecutter.flow_dir }}"
 
 FULL_FLOW_DIR = Path(".").resolve().with_name(FLOW_DIR)
