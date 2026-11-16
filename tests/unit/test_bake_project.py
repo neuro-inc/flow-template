@@ -10,7 +10,6 @@ from pytest_cookies.plugin import Cookies  # type: ignore
 
 from tests.utils import inside_dir
 
-
 logger = logging.getLogger(__name__)
 
 
